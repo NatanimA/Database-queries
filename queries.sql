@@ -95,3 +95,9 @@ GROUP BY neutered;
 Select species , MAX(weight_kg) as WEIGHT_MAX , MIN(weight_kg) as WEIGHT_MIN
 from animals
 GROUP BY species;
+
+-- What is the average number of escape attempts per animal type of those born between 1990 and 2000?
+Select species , AVG(escape_attempts)
+from animals
+WHERE date_of_birth between '1990-1-1' and '2000-1-1'
+GROUP BY species
