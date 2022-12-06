@@ -8,9 +8,6 @@ INSERT into animals(name,date_of_birth,weight_kg,neutered,escape_attempts) value
 -- Her name is Devimon. She was born on May 12th, 2017, and currently weighs 11kg. She is neutered and she has tried to escape 5 times.
 INSERT into animals(name,date_of_birth,weight_kg,neutered,escape_attempts) values('Devimon','2017-May-12',11,true,5);
 
--- Add a column species of type string to your animals table. Modify your schema.sql file.
-ALTER TABLE animals
-ADD COLUMN species VARCHAR(40);
 
 --  His name is Charmander. He was born on Feb 8th, 2020, and currently weighs -11kg. He is not neutered and he has never tried to escape.
 INSERT into animals(name,date_of_birth,weight_kg,neutered,escape_attempts) values('Charmander','2020-Feb-8',11,false,0);

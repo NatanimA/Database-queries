@@ -19,3 +19,8 @@ CREATE TABLE animals (
     neutered bool,
     weight_kg Decimal
 );
+
+
+-- Add a column species of type string to your animals table. Modify your schema.sql file.
+ALTER TABLE animals
+ADD COLUMN species VARCHAR(40);
