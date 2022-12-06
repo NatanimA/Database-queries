@@ -17,14 +17,13 @@ select * from animals where name != 'Gabumon';
 select * from animals where weight_kg >= 10.4 and weight_kg <= 17.3 ;
 
 -- Inside a transaction update the animals table by setting the species column to unspecified. Verify that change was made. Then roll back the change and verify that the species columns went back to the state before the transaction.
+Begin;
 UPDATE animals
 SET 
 species = 'unspecified';
-
-UPDATE animals
-SET 
-species = 'unspecified';
+Select * from animals;
 ROLLBACK;
+
 
 BEGIN;
 
@@ -37,7 +36,7 @@ WHERE name like '%mon';
 UPDATE animals
 SET species = 'pokemon'
 WHERE species IS NULL;
-
+SELECT * From animals;
 -- Commit the transaction.
 
 COMMIT;
