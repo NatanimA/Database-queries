@@ -57,7 +57,7 @@ BEGIN;
 SAVEPOINT BEFORE_DELETE;
 -- Delete all animals born after Jan 1st, 2022.
 DELETE from animals
-where date_of_birth > '2022-1-1';
+where date_of_birth >= '2022-1-1';
 -- Create a savepoint for the transaction.
 SAVEPOINT AFTER_DELETE;
 -- Update all animals' weight to be their weight multiplied by -1.
