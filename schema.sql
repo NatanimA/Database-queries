@@ -65,3 +65,74 @@ ADD FOREIGN KEY (SPECIES_ID) REFERENCES SPECIES(ID);
 ALTER TABLE ANIMALS
 ADD COLUMN OWNERS_ID int REFERENCES OWNERS (id)
 ADD FOREIGN KEY (SPECIES_ID) REFERENCES SPECIES(ID);
+
+
+-- DAY 4
+
+/*
+Create a table named vets with the following columns:
+id: integer (set it as autoincremented PRIMARY KEY)
+name: string
+age: integer
+date_of_graduation: date
+*/
+
+DROP TABLE IF EXISTS VETS;
+
+CREATE TABLE VETS (
+	ID INT GENERATED ALWAYS AS IDENTITY,
+	NAME VARCHAR(80),
+	AGE INT,
+	DATE_OF_GRADUATION DATE,
+	PRIMARY KEY (ID)
+);
+
+BEGIN;
+ALTER TABLE VETS
+ADD UNIQUE (NAME);
+
+ALTER TABLE SPECIES
+ADD UNIQUE (NAME);
+
+COMMIT;
+
+/*
+There is a many-to-many relationship between
+ the tables species and vets: a vet can specialize 
+ in multiple species, and a species can have multiple 
+ vets specialized in it. Create a 
+"join table" called specializations to handle this relationship.
+*/
+DROP TABLE IF EXISTS SPECIALIZATIONS;
+
+CREATE TABLE SPECIALIZATIONS(
+	VET_NAME VARCHAR(80),
+	SPECIES_NAME VARCHAR(80),
+	FOREIGN KEY (VET_NAME) REFERENCES VETS(NAME),
+	FOREIGN KEY (SPECIES_NAME) REFERENCES SPECIES(NAME)
+);
+
+/*
+There is a many-to-many relationship between 
+the tables animals and vets: an animal can 
+visit multiple vets and one vet can be 
+visited by multiple animals. 
+Create a "join table" called visits to 
+handle this relationship, it should also keep track 
+of the date of the visit.
+
+*/
+
+ALTER TABLE ANIMALS
+ADD UNIQUE (NAME);
+
+DROP TABLE IF EXISTS VISITS;
+
+CREATE TABLE VISITS(
+	VETS_NAME VARCHAR(80),
+	ANIMAL_NAME VARCHAR(80),
+	DATE_VISITED DATE,
+	FOREIGN KEY (VETS_NAME) REFERENCES VETS (NAME),
+	FOREIGN KEY (ANIMAL_NAME) REFERENCES ANIMALS (NAME)
+);
+

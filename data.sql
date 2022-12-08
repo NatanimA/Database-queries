@@ -90,3 +90,56 @@ SET OWNERS_ID = 5
 WHERE NAME = 'Angemon' OR NAME = 'Boarmon';
 
 COMMIT;
+
+
+/*
+Insert the following data for vets:
+Vet William Tatcher is 45 years old and graduated Apr 23rd, 2000.
+Vet Maisy Smith is 26 years old and graduated Jan 17th, 2019.
+Vet Stephanie Mendez is 64 years old and graduated May 4th, 1981.
+Vet Jack Harkness is 38 years old and graduated Jun 8th, 2008.
+
+*/
+
+INSERT INTO VETS (NAME,AGE,DATE_OF_GRADUATION)
+	VALUES ('William Tatcher',45,'2000-APR-23'),
+			('Maisy Smith',23,'2019-JAN-17'),
+			('Stephanie Mendez',64,'1981-MAY-4'),
+			('Jack Harkness',38,'2008-JUN-8;')
+
+/*
+Insert the following data for specialties:
+Vet William Tatcher is specialized in Pokemon.
+Vet Stephanie Mendez is specialized in Digimon and Pokemon.
+Vet Jack Harkness is specialized in Digimon.
+*/
+
+INSERT INTO SPECIALIZATIONS(VET_NAME,SPECIES_NAME)
+	VALUES ('William Tatcher','Pokemon'),
+			('Stephanie Mendez','Digimon'),
+			('Stephanie Mendez','Pokemon'),
+			('Jack Harkness','Digimon');
+
+-- INSERTING DATA INTO VISITS
+
+INSERT INTO VISITS (ANIMAL_NAME,VETS_NAME,DATE_VISITED)
+	VALUES ('Agumon','William Tatcher','2020-MAY-24'),
+			('Agumon','Stephanie Mendez','2020-JUL-22'),
+			('Gabumon','Jack Harkness','2021-FEB-2'),
+			('Pikachu','Maisy Smith','2020-JAN-5'),
+			('Pikachu','Maisy Smith','2020-MAR-8'),
+			('Pikachu','Maisy Smith','2020-MAY-14'),
+			('Devimon','Stephanie Mendez','2021-MAY-4'),
+			('Charmander','Jack Harkness','2021-FEB-24'),
+			('Plantmon','Maisy Smith','2019-DEC-21'),
+			('Plantmon','William Tatcher','2020-AUG-10'),
+			('Plantmon','Maisy Smith','2021-APR-7'),
+			('Squirtle','Stephanie Mendez','2019-SEP-29'),
+			('Angemon','Jack Harkness','2020-OCT-3'),
+			('Angemon','Jack Harkness','2020-NOV-4'),
+			('Boarmon','Maisy Smith','2019-JAN-24'),
+			('Boarmon','Maisy Smith','2019-MAY-15'),
+			('Boarmon','Maisy Smith','2020-FEB-27'),
+			('Boarmon','Maisy Smith','2020-AUG-3'),
+			('Blossom','Stephanie Mendez','2020-MAY-24'),
+			('Blossom','William Tatcher','2021-JAN-11');
