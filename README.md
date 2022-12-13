@@ -1,4 +1,6 @@
-# Database SQL queries Training
+# Vet Clinic
+
+![Erd Diagram](https://user-images.githubusercontent.com/66979348/207295279-2eb8806b-09f8-4e9d-89d6-4ea2110f8cc2.png)
 
 
 ## Getting Started
