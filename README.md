@@ -1,6 +1,7 @@
 # Vet Clinic
 
-![Erd Diagram](https://user-images.githubusercontent.com/66979348/207295279-2eb8806b-09f8-4e9d-89d6-4ea2110f8cc2.png)
+![erd](https://user-images.githubusercontent.com/66979348/207295710-43a1227f-5770-4d77-8b75-00a28f9bfe1d.png)
+
 
 
 ## Getting Started
